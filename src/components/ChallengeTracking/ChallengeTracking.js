@@ -29,20 +29,20 @@ const ChallengeTracking = () => {
     }
   };
 
+  // Streamlined testimonials - focused on impact with reliable avatars
   const testimonials = [
     {
       id: 1,
       name: "Adaora Okafor",
       role: "Senior Software Engineer",
       company: "Microsoft",
-      location: "Lagos, Nigeria → Seattle, USA",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
-      testimonial: "Tumoro's ELO rating system helped me showcase my true potential. The platform's vetting process gave me credibility that traditional resumes couldn't. Within 3 months, I landed my dream role at Microsoft with a 40% salary increase.",
+      location: "Lagos → Seattle",
+      avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+      testimonial: "Tumoro's ELO rating system helped me showcase my true potential. Within 3 months, I landed my dream role at Microsoft with a 40% salary increase.",
       rating: 5,
       type: "talent",
       highlight: "40% salary increase",
-      color: "#2568FB",
-      bgColor: "#F0F4FF"
+      color: "#6366f1"
     },
     {
       id: 2,
@@ -50,27 +50,25 @@ const ChallengeTracking = () => {
       role: "CTO & Co-Founder",
       company: "FinTech Innovations",
       location: "London, UK",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
-      testimonial: "The vetting process is incredible. Every talent is vetted, every hire is reliable. We've scaled our engineering team from 5 to 50 professionals with zero bad hires. The quality is consistently exceptional.",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      testimonial: "The vetting process is incredible. We've scaled our engineering team from 5 to 50 professionals with zero bad hires. The quality is consistently exceptional.",
       rating: 5,
       type: "employer",
       highlight: "Zero bad hires",
-      color: "#10B981",
-      bgColor: "#F0FDF4"
+      color: "#10b981"
     },
     {
       id: 3,
       name: "Kwame Asante",
       role: "Lead UX Designer",
       company: "Shopify",
-      location: "Accra, Ghana → Toronto, Canada",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
-      testimonial: "The Tree Score feature celebrating my heritage made me stand out authentically. Employers love the cultural diversity and unique perspective it brings to their teams. It's not just a job platform, it's a cultural bridge.",
+      location: "Accra → Toronto",
+      avatar: "https://randomuser.me/api/portraits/men/68.jpg",
+      testimonial: "The Tree Score feature celebrating my heritage made me stand out authentically. It's not just a job platform, it's a cultural bridge.",
       rating: 5,
       type: "talent",
       highlight: "Cultural authenticity",
-      color: "#F59E0B",
-      bgColor: "#FFFBEB"
+      color: "#f59e0b"
     },
     {
       id: 4,
@@ -78,28 +76,47 @@ const ChallengeTracking = () => {
       role: "VP of Engineering",
       company: "Stripe",
       location: "San Francisco, USA",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
-      testimonial: "Tumoro has revolutionized our hiring process. The AI-powered matching and comprehensive vetting saves us months of screening. We've hired 15 exceptional African professionals who've become our top performers.",
+      avatar: "https://randomuser.me/api/portraits/women/65.jpg",
+      testimonial: "Tumoro has revolutionized our hiring process. We've hired 15 exceptional African professionals who've become our top performers.",
       rating: 5,
       type: "employer",
       highlight: "Top performers",
-      color: "#8B5CF6",
-      bgColor: "#FAF5FF"
+      color: "#8b5cf6"
+    },
+    {
+      id: 5,
+      name: "Amara Diallo",
+      role: "Data Scientist",
+      company: "Google",
+      location: "Dakar → Mountain View",
+      avatar: "https://randomuser.me/api/portraits/women/28.jpg",
+      testimonial: "The AI-powered matching connected me with opportunities I never knew existed. My career trajectory changed completely.",
+      rating: 5,
+      type: "talent",
+      highlight: "Career transformation",
+      color: "#ec4899"
+    },
+    {
+      id: 6,
+      name: "David Thompson",
+      role: "Head of Talent",
+      company: "Meta",
+      location: "Austin, USA",
+      avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+      testimonial: "Tumoro has become our go-to platform for finding exceptional African talent. The quality and cultural fit are unmatched.",
+      rating: 5,
+      type: "employer",
+      highlight: "Unmatched quality",
+      color: "#06b6d4"
     }
   ];
 
+  // Key metrics - no repetition with Features
   const metrics = [
-    { number: "98%", label: "Success Rate", icon: "🎯", color: "#2568FB" },
-    { number: "2.5x", label: "Faster Hiring", icon: "⚡", color: "#10B981" },
-    { number: "45%", label: "Avg Salary Increase", icon: "📈", color: "#F59E0B" },
-    { number: "50+", label: "Countries Reached", icon: "🌍", color: "#8B5CF6" }
-  ];
-
-  const achievements = [
-    { icon: "🏆", title: "Industry Recognition", description: "Featured in TechCrunch, Forbes, and Wired" },
-    { icon: "🌟", title: "5-Star Platform", description: "Rated 4.9/5 by 12,000+ professionals" },
-    { icon: "🚀", title: "Rapid Growth", description: "300% year-over-year growth in placements" },
-    { icon: "🌍", title: "Global Reach", description: "Connecting talent across 50+ countries" }
+    { number: "98%", label: "Success Rate", color: "#6366f1" },
+    { number: "2.5x", label: "Faster Hiring", color: "#10b981" },
+    { number: "45%", label: "Avg Salary Increase", color: "#f59e0b" },
+    { number: "50+", label: "Countries", color: "#8b5cf6" }
   ];
 
   // Auto-play testimonials
@@ -124,7 +141,9 @@ const ChallengeTracking = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.span variants={itemVariants} className={styles.badge}>
-            <span className={styles.badgeIcon}>✨</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
             Success Stories
           </motion.span>
           
@@ -158,7 +177,6 @@ const ChallengeTracking = () => {
                   transition: { duration: 0.2 }
                 }}
               >
-                <div className={styles.metricIcon}>{metric.icon}</div>
                 <div className={styles.metricNumber} style={{ color: metric.color }}>{metric.number}</div>
                 <div className={styles.metricLabel}>{metric.label}</div>
                 <div className={styles.metricAccent} style={{ backgroundColor: metric.color }}></div>
@@ -179,7 +197,13 @@ const ChallengeTracking = () => {
             <div className={styles.featuredContent}>
               <div className={styles.featuredHeader}>
                 <div className={styles.featuredAvatar}>
-                  <img src={testimonials[activeTestimonial].avatar} alt={testimonials[activeTestimonial].name} />
+                  <img 
+                    src={testimonials[activeTestimonial].avatar} 
+                    alt={testimonials[activeTestimonial].name}
+                    onError={(e) => {
+                      e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonials[activeTestimonial].name)}&background=6366f1&color=fff&size=150`;
+                    }}
+                  />
                 </div>
                 <div className={styles.featuredInfo}>
                   <h3 className={styles.featuredName}>{testimonials[activeTestimonial].name}</h3>
@@ -202,11 +226,28 @@ const ChallengeTracking = () => {
               <div className={styles.featuredFooter}>
                 <div className={styles.rating}>
                   {[...Array(testimonials[activeTestimonial].rating)].map((_, i) => (
-                    <span key={i} className={styles.star}>⭐</span>
+                    <svg key={i} className={styles.star} width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
                   ))}
                 </div>
-                <div className={styles.userType} style={{ backgroundColor: testimonials[activeTestimonial].bgColor, color: testimonials[activeTestimonial].color }}>
-                  {testimonials[activeTestimonial].type === 'talent' ? '👨‍💻 Talent' : '🏢 Employer'}
+                <div className={styles.userType} style={{ color: testimonials[activeTestimonial].color }}>
+                  {testimonials[activeTestimonial].type === 'talent' ? (
+                    <>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <circle cx="12" cy="7" r="4" stroke="currentColor" strokeWidth="2"/>
+                      </svg>
+                      Talent
+                    </>
+                  ) : (
+                    <>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 21h18M5 21V7l8-4v18M19 21V10l-6-3M9 9v.01M9 12v.01M9 15v.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                      Employer
+                    </>
+                  )}
                 </div>
               </div>
             </div>
@@ -224,44 +265,10 @@ const ChallengeTracking = () => {
                 }}
                 onMouseEnter={() => setIsAutoPlaying(false)}
                 onMouseLeave={() => setIsAutoPlaying(true)}
+                aria-label={`View testimonial ${index + 1}`}
               />
             ))}
           </div>
-        </motion.div>
-
-        {/* Achievements Section */}
-        <motion.div 
-          className={styles.achievementsSection}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <motion.div variants={itemVariants} className={styles.achievementsHeader}>
-            <span className={styles.achievementsBadge}>
-              <span className={styles.badgeIcon}>🏆</span>
-              Recognition
-            </span>
-            <h3 className={styles.achievementsTitle}>Trusted & Recognized Globally</h3>
-          </motion.div>
-          
-          <motion.div className={styles.achievementsGrid} variants={containerVariants}>
-            {achievements.map((achievement, index) => (
-              <motion.div
-                key={index}
-                className={styles.achievementCard}
-                variants={itemVariants}
-                whileHover={{ 
-                  y: -8,
-                  transition: { duration: 0.3 }
-                }}
-              >
-                <div className={styles.achievementIcon}>{achievement.icon}</div>
-                <h4 className={styles.achievementTitle}>{achievement.title}</h4>
-                <p className={styles.achievementDescription}>{achievement.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
         </motion.div>
 
         {/* All Testimonials Grid */}
@@ -273,48 +280,67 @@ const ChallengeTracking = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.id}
+            <div 
+              key={index} 
               className={`${styles.testimonialCard} ${styles[testimonial.type]}`}
-              variants={itemVariants}
-              whileHover={{ 
-                y: -8,
-                transition: { duration: 0.3 }
-              }}
             >
               <div className={styles.cardHeader}>
                 <div className={styles.cardAvatar}>
-                  <img src={testimonial.avatar} alt={testimonial.name} />
+                  <img 
+                    src={testimonial.avatar} 
+                    alt={testimonial.name}
+                    onError={(e) => {
+                      e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.name)}&background=6366f1&color=ffffff&size=128&bold=true`;
+                    }}
+                  />
                 </div>
                 <div className={styles.cardInfo}>
                   <h4 className={styles.cardName}>{testimonial.name}</h4>
                   <p className={styles.cardRole}>{testimonial.role}</p>
                   <p className={styles.cardCompany}>{testimonial.company}</p>
                 </div>
-                <div className={styles.cardHighlight} style={{ backgroundColor: testimonial.color }}>
-                  {testimonial.highlight}
-                </div>
+              </div>
+              
+              <div className={styles.cardHighlight}>
+                {testimonial.highlight}
               </div>
               
               <div className={styles.cardContent}>
-                <p className={styles.cardTestimonial}>
-                  "{testimonial.testimonial.substring(0, 120)}..."
-                </p>
+                <blockquote className={styles.cardTestimonial}>
+                  {testimonial.testimonial.length > 120 
+                    ? `${testimonial.testimonial.substring(0, 120)}...` 
+                    : testimonial.testimonial
+                  }
+                </blockquote>
               </div>
               
               <div className={styles.cardFooter}>
                 <div className={styles.cardRating}>
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className={styles.cardStar}>⭐</span>
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className={styles.cardStar}>★</span>
                   ))}
                 </div>
-                <div className={styles.cardType} style={{ backgroundColor: testimonial.bgColor, color: testimonial.color }}>
-                  {testimonial.type === 'talent' ? 'Talent' : 'Employer'}
+                <div className={styles.cardType}>
+                  {testimonial.type === 'talent' ? (
+                    <>
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                      </svg>
+                      Talent
+                    </>
+                  ) : (
+                    <>
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10z"/>
+                      </svg>
+                      Employer
+                    </>
+                  )}
                 </div>
               </div>
               
-              <div className={styles.cardAccent} style={{ backgroundColor: testimonial.color }}></div>
-            </motion.div>
+              <div className={styles.cardAccent}></div>
+            </div>
           ))}
         </motion.div>
 
@@ -327,7 +353,6 @@ const ChallengeTracking = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.div variants={itemVariants} className={styles.ctaContent}>
-            <div className={styles.ctaIcon}>🚀</div>
             <h3 className={styles.ctaTitle}>Ready to Write Your Success Story?</h3>
             <p className={styles.ctaDescription}>
               Join thousands of African professionals who have transformed their careers 

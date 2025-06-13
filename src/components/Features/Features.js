@@ -28,128 +28,96 @@ const Features = () => {
     }
   };
 
+  // Streamlined stats - no repetition
+  const stats = [
+    { number: "12K+", label: "Professionals", color: "#6366f1" },
+    { number: "500+", label: "Companies", color: "#8b5cf6" },
+    { number: "96%", label: "Success Rate", color: "#a855f7" }
+  ];
+
+  // Core features - focused and unique
   const features = [
     {
-      icon: "🎯",
       title: "ELO Rating System",
-      description: "Dynamic scoring that combines skill assessments, reviewer ratings, and Tree Score to showcase your true professional value in the global marketplace.",
-      highlight: "96% accuracy rate",
-      color: "#2568FB",
-      bgColor: "#F0F4FF"
+      description: "Dynamic scoring that showcases your true professional value through skill assessments and performance metrics.",
+      highlight: "96% accuracy",
+      color: "#6366f1",
+      bgColor: "#f0f4ff"
     },
     {
-      icon: "✅",
-      title: "Expert Vetting Process",
-      description: "Every professional undergoes rigorous evaluation by industry experts. Comprehensive screening ensures quality and reliability for employers.",
+      title: "Expert Vetting",
+      description: "Rigorous evaluation by industry experts ensures quality matches and reliable hiring outcomes.",
       highlight: "Zero bad hires",
-      color: "#10B981",
-      bgColor: "#F0FDF4"
+      color: "#10b981",
+      bgColor: "#f0fdf4"
     },
     {
-      icon: "🌳",
-      title: "Tree Score Heritage",
-      description: "Optional FamilySearch integration that adds community credibility to your profile, celebrating African heritage and family connections.",
-      highlight: "Cultural authenticity",
-      color: "#F59E0B",
-      bgColor: "#FFFBEB"
+      title: "Cultural Heritage",
+      description: "Optional Tree Score integration celebrates African heritage while building professional credibility.",
+      highlight: "Authentic identity",
+      color: "#f59e0b",
+      bgColor: "#fffbeb"
     },
     {
-      icon: "🎬",
-      title: "Multimedia Showcasing",
-      description: "Upload your '30-second intro' videos, portfolio pieces, and rich media content to stand out from traditional text-based profiles.",
-      highlight: "3x more engagement",
-      color: "#8B5CF6",
-      bgColor: "#FAF5FF"
-    },
-    {
-      icon: "🤖",
-      title: "AI-Powered Growth",
-      description: "Receive personalized recommendations for skills development, mentorship opportunities, and strategic career advancement paths.",
-      highlight: "Smart matching",
-      color: "#EF4444",
-      bgColor: "#FEF2F2"
-    },
-    {
-      icon: "🤝",
-      title: "Community & Mentorship",
-      description: "Connect with fellow African professionals, share your journey through posts, and access mentorship from industry leaders worldwide.",
-      highlight: "Global network",
-      color: "#06B6D4",
-      bgColor: "#F0F9FF"
+      title: "AI-Powered Matching",
+      description: "Smart algorithms connect the right talent with the right opportunities for optimal career growth.",
+      highlight: "Perfect matches",
+      color: "#8b5cf6",
+      bgColor: "#faf5ff"
     }
   ];
 
-  const stats = [
-    { number: "12,000+", label: "Active Professionals", icon: "👥", color: "#2568FB" },
-    { number: "500+", label: "Partner Companies", icon: "🏢", color: "#10B981" },
-    { number: "2,800+", label: "Successful Placements", icon: "🎉", color: "#F59E0B" },
-    { number: "96%", label: "Success Rate", icon: "📈", color: "#8B5CF6" }
-  ];
-
+  // Top companies - streamlined selection
   const companies = [
     { 
       name: "Microsoft", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
-      employees: "15+ hires"
+      logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
     },
     { 
       name: "Google", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
-      employees: "22+ hires"
+      logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
     },
     { 
       name: "Amazon", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
-      employees: "18+ hires"
+      logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
     },
     { 
       name: "Meta", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg",
-      employees: "12+ hires"
+      logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg"
     },
     { 
       name: "Apple", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
-      employees: "8+ hires"
+      logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
     },
     { 
       name: "Shopify", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg",
-      employees: "25+ hires"
-    },
-    { 
-      name: "Stripe", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg",
-      employees: "14+ hires"
-    },
-    { 
-      name: "Netflix", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
-      employees: "9+ hires"
+      logo: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg"
     }
   ];
 
   return (
     <section className={styles.features}>
       <div className={styles.container}>
-        {/* Hero Stats Section */}
+        {/* Trusted Worldwide Section */}
         <motion.div 
-          className={styles.statsSection}
+          className={styles.trustedSection}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.div variants={itemVariants} className={styles.statsHeader}>
-            <span className={styles.statsBadge}>
-              <span className={styles.badgeIcon}>⚡</span>
+          <motion.div variants={itemVariants} className={styles.trustedHeader}>
+            <span className={styles.badge}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
               Trusted Worldwide
             </span>
-            <h2 className={styles.statsTitle}>
-              Join <span className={styles.highlightNumber}>12,000+</span> African Professionals
+            <h2 className={styles.trustedTitle}>
+              Join <span className={styles.highlightText}>12,000+</span> African Professionals
             </h2>
-            <p className={styles.statsSubtitle}>
-              Who have transformed their careers through our platform
+            <p className={styles.trustedSubtitle}>
+              Building careers and connecting with global opportunities through our verified platform
             </p>
           </motion.div>
           
@@ -164,7 +132,6 @@ const Features = () => {
                   transition: { duration: 0.2 }
                 }}
               >
-                <div className={styles.statIcon}>{stat.icon}</div>
                 <div className={styles.statNumber} style={{ color: stat.color }}>{stat.number}</div>
                 <div className={styles.statLabel}>{stat.label}</div>
                 <div className={styles.statAccent} style={{ backgroundColor: stat.color }}></div>
@@ -173,80 +140,77 @@ const Features = () => {
           </motion.div>
         </motion.div>
 
-        {/* Main Features Section */}
+        {/* Platform Features Section */}
         <motion.div 
-          className={styles.featuresHeader}
+          className={styles.platformSection}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.span variants={itemVariants} className={styles.sectionBadge}>
-            <span className={styles.badgeIcon}>🚀</span>
-            Platform Features
-          </motion.span>
-          
-          <motion.h2 variants={itemVariants} className={styles.featuresTitle}>
-            Everything You Need to
-            <span className={styles.highlightText}> Unlock Your Potential</span>
-          </motion.h2>
-          
-          <motion.p variants={itemVariants} className={styles.featuresSubtitle}>
-            From AI-powered matching to cultural heritage celebration, we provide comprehensive tools 
-            for career advancement and professional growth.
-          </motion.p>
-        </motion.div>
+          <motion.div variants={itemVariants} className={styles.platformHeader}>
+            <span className={styles.badge}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              Platform Features
+            </span>
+            <h2 className={styles.platformTitle}>
+              Everything You Need to
+              <span className={styles.highlightText}> Unlock Your Potential</span>
+            </h2>
+            <p className={styles.platformSubtitle}>
+              From AI-powered matching to cultural heritage celebration, we provide comprehensive tools for career advancement.
+            </p>
+          </motion.div>
 
-        {/* Interactive Features Grid */}
-        <motion.div 
-          className={styles.featuresGrid}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              className={`${styles.featureCard} ${activeFeature === index ? styles.active : ''}`}
-              variants={itemVariants}
-              whileHover={{ 
-                y: -12,
-                transition: { duration: 0.3 }
-              }}
-              onHoverStart={() => setActiveFeature(index)}
-            >
-              <div className={styles.featureHeader}>
-                <div className={styles.featureIcon} style={{ backgroundColor: feature.bgColor, color: feature.color }}>
-                  <span>{feature.icon}</span>
+          <motion.div 
+            className={styles.featuresGrid}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                className={`${styles.featureCard} ${activeFeature === index ? styles.active : ''}`}
+                variants={itemVariants}
+                whileHover={{ 
+                  y: -8,
+                  transition: { duration: 0.3 }
+                }}
+                onHoverStart={() => setActiveFeature(index)}
+              >
+                <div className={styles.featureHeader}>
+                  <div className={styles.featureHighlight} style={{ backgroundColor: feature.color }}>
+                    {feature.highlight}
+                  </div>
                 </div>
-                <div className={styles.featureHighlight} style={{ backgroundColor: feature.color }}>
-                  {feature.highlight}
+                
+                <div className={styles.featureContent}>
+                  <h3 className={styles.featureTitle}>{feature.title}</h3>
+                  <p className={styles.featureDescription}>{feature.description}</p>
                 </div>
-              </div>
-              
-              <div className={styles.featureContent}>
-                <h3 className={styles.featureTitle}>{feature.title}</h3>
-                <p className={styles.featureDescription}>{feature.description}</p>
-              </div>
 
-              <div className={styles.featureFooter}>
-                <motion.button 
-                  className={styles.learnMore}
-                  style={{ color: feature.color }}
-                  whileHover={{ x: 4 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  Learn More
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </motion.button>
-              </div>
+                <div className={styles.featureFooter}>
+                  <motion.button 
+                    className={styles.learnMore}
+                    style={{ color: feature.color }}
+                    whileHover={{ x: 4 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </motion.button>
+                </div>
 
-              <div className={styles.cardAccent} style={{ backgroundColor: feature.color }}></div>
-            </motion.div>
-          ))}
+                <div className={styles.cardAccent} style={{ backgroundColor: feature.color }}></div>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
 
         {/* Companies Section */}
@@ -258,13 +222,15 @@ const Features = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.div variants={itemVariants} className={styles.companiesHeader}>
-            <span className={styles.companiesBadge}>
-              <span className={styles.badgeIcon}>🏆</span>
+            <span className={styles.badge}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M3 21h18M5 21V7l8-4v18M19 21V10l-6-3M9 9v.01M9 12v.01M9 15v.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
               Trusted Partners
             </span>
-            <h3 className={styles.companiesTitle}>Trusted by Industry Leaders</h3>
+            <h3 className={styles.companiesTitle}>Where Our Professionals Work</h3>
             <p className={styles.companiesSubtitle}>
-              Join professionals working at the world's most innovative companies
+              Join talent working at the world's most innovative companies
             </p>
           </motion.div>
           
@@ -282,10 +248,6 @@ const Features = () => {
                 <div className={styles.companyLogo}>
                   <img src={company.logo} alt={company.name} />
                 </div>
-                <div className={styles.companyInfo}>
-                  <div className={styles.companyName}>{company.name}</div>
-                  <div className={styles.companyEmployees}>{company.employees}</div>
-                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -300,7 +262,6 @@ const Features = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.div variants={itemVariants} className={styles.ctaContent}>
-            <div className={styles.ctaIcon}>🎯</div>
             <h3 className={styles.ctaTitle}>Ready to Elevate Your Career?</h3>
             <p className={styles.ctaDescription}>
               Join thousands of African professionals who have unlocked global opportunities

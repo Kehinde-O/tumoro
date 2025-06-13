@@ -1,207 +1,521 @@
 /* Challenge Tracking - Testimonials Section */
 .challengeTracking {
-  position: relative;
   padding: 6rem 0;
-  background: linear-gradient(135deg, #FFFEF7 0%, #FAF8F1 100%);
-  overflow: hidden;
-}
-
-/* Background Elements */
-.backgroundElements {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.gradientOrb1 {
-  position: absolute;
-  top: 15%;
-  left: 10%;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(34, 139, 34, 0.08) 0%, rgba(50, 205, 50, 0.04) 50%, transparent 70%);
-  border-radius: 50%;
-  filter: blur(40px);
-}
-
-.gradientOrb2 {
-  position: absolute;
-  bottom: 20%;
-  right: 15%;
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, rgba(210, 105, 30, 0.06) 0%, rgba(255, 140, 0, 0.03) 50%, transparent 70%);
-  border-radius: 50%;
-  filter: blur(35px);
-}
-
-/* Content */
-.content {
+  background: white;
   position: relative;
-  z-index: 2;
+}
+
+.container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
-/* Header */
+/* Header Section */
 .header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
 }
 
 .badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2rem;
-  background: rgba(34, 139, 34, 0.1);
-  border: 1px solid rgba(34, 139, 34, 0.2);
+  gap: 0.5rem;
+  background: #8B5CF6;
+  color: white;
+  padding: 0.75rem 1.5rem;
   border-radius: 50px;
-  color: #228B22;
   font-size: 0.9rem;
   font-weight: 600;
-  margin-bottom: 2rem;
-  backdrop-filter: blur(10px);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
 }
 
 .badgeIcon {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .title {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 800;
-  line-height: 1.1;
-  color: #2F2F2F;
+  color: #111827;
+  line-height: 1.2;
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
 }
 
 .highlightText {
-  background: linear-gradient(135deg, #D2691E 0%, #FF8C00 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #8B5CF6;
+  position: relative;
+}
+
+.highlightText::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #8B5CF6;
+  border-radius: 2px;
 }
 
 .subtitle {
   font-size: 1.2rem;
+  color: #6b7280;
   line-height: 1.6;
-  color: #555555;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
-/* Testimonial Grid */
-.testimonialGrid {
+/* Metrics Section */
+.metricsSection {
+  margin-bottom: 6rem;
+}
+
+.metricsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  margin-bottom: 4rem;
+}
+
+.metricCard {
+  background: #f8fafc;
+  padding: 2.5rem 1.5rem;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.metricCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e1;
+  background: white;
+}
+
+.metricIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.metricNumber {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.metricLabel {
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metricAccent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 0 0 20px 20px;
+}
+
+/* Featured Testimonial */
+.featuredSection {
+  margin-bottom: 6rem;
+  position: relative;
+}
+
+.featuredCard {
+  background: white;
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.featuredCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(37, 104, 251, 0.03) 0%, transparent 50%);
+}
+
+.featuredContent {
+  position: relative;
+  z-index: 2;
+}
+
+.featuredHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.featuredAvatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 3px solid #e2e8f0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.featuredAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featuredInfo {
+  flex: 1;
+}
+
+.featuredName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.featuredRole {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.featuredCompany {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.featuredLocation {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.featuredHighlight {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.featuredTestimonial {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.quoteIcon {
+  font-size: 4rem;
+  color: #e2e8f0;
+  position: absolute;
+  top: -1rem;
+  left: -0.5rem;
+  font-family: serif;
+  line-height: 1;
+}
+
+.testimonialText {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #374151;
+  font-style: italic;
+  position: relative;
+  z-index: 2;
+  padding-left: 2rem;
+}
+
+.featuredFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.star {
+  font-size: 1.2rem;
+}
+
+.userType {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Testimonial Navigation */
+.testimonialNav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.navDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navDot:hover,
+.navDot.active {
+  background: #8B5CF6;
+  transform: scale(1.2);
+}
+
+/* Achievements Section */
+.achievementsSection {
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+.achievementsHeader {
+  margin-bottom: 3rem;
+}
+
+.achievementsBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #F59E0B;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.achievementsTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.achievementsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.achievementCard {
+  background: white;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.achievementCard:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e1;
+}
+
+.achievementIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.achievementTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.achievementDescription {
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* Testimonials Grid */
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 6rem;
 }
 
 .testimonialCard {
   background: white;
   border-radius: 20px;
   padding: 2rem;
-  box-shadow: 0 10px 30px rgba(210, 105, 30, 0.08);
-  border: 1px solid rgba(240, 237, 230, 0.5);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-}
-
-.testimonialCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(135deg, #D2691E 0%, #FF8C00 100%);
+  cursor: pointer;
 }
 
 .testimonialCard:hover {
-  box-shadow: 0 15px 40px rgba(210, 105, 30, 0.15);
-  border-color: rgba(210, 105, 30, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-color: #cbd5e1;
+}
+
+.testimonialCard.talent {
+  border-left: 4px solid #2568FB;
+}
+
+.testimonialCard.employer {
+  border-left: 4px solid #10B981;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cardAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid #e2e8f0;
+}
+
+.cardAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardInfo {
+  flex: 1;
+}
+
+.cardName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+}
+
+.cardRole {
+  font-size: 0.9rem;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.cardCompany {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.cardHighlight {
+  padding: 0.375rem 0.75rem;
+  border-radius: 16px;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
 }
 
 .cardContent {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-.stars {
-  display: flex;
-  gap: 0.25rem;
-  margin-bottom: 1rem;
-}
-
-.star {
-  font-size: 1rem;
-}
-
-.testimonialText {
-  font-size: 1.1rem;
+.cardTestimonial {
+  font-size: 0.95rem;
   line-height: 1.6;
-  color: #2F2F2F;
+  color: #374151;
   font-style: italic;
-  margin: 0;
 }
 
 .cardFooter {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
 }
 
-.userInfo {
+.cardRating {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  gap: 0.125rem;
 }
 
-.userAvatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid rgba(210, 105, 30, 0.2);
-}
-
-.userDetails {
-  flex: 1;
-}
-
-.userName {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #2F2F2F;
-  margin: 0 0 0.25rem;
-}
-
-.userRole {
+.cardStar {
   font-size: 0.9rem;
-  color: #D2691E;
-  font-weight: 500;
-  margin: 0 0 0.25rem;
 }
 
-.userCompany {
-  font-size: 0.85rem;
-  color: #8B8377;
-  margin: 0;
+.cardType {
+  padding: 0.375rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cardAccent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 0 0 20px 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.testimonialCard:hover .cardAccent {
+  opacity: 1;
 }
 
 /* CTA Section */
 .ctaSection {
+  background: #1f2937;
+  border-radius: 24px;
+  padding: 4rem 2rem;
   text-align: center;
-  padding: 3rem 2rem;
-  background: linear-gradient(135deg, #228B22 0%, #32CD32 100%);
-  border-radius: 20px;
   color: white;
   position: relative;
   overflow: hidden;
@@ -212,34 +526,40 @@
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
-  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(37, 104, 251, 0.1) 0%, transparent 50%);
 }
 
 .ctaContent {
   position: relative;
   z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: block;
 }
 
 .ctaTitle {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 1rem;
-  color: white;
+  line-height: 1.2;
 }
 
-.ctaSubtitle {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 2rem;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+.ctaDescription {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
 }
 
-.ctaActions {
+.ctaButtons {
   display: flex;
   gap: 1rem;
   justify-content: center;
@@ -247,112 +567,61 @@
   flex-wrap: wrap;
 }
 
-.primaryBtn {
+.ctaButton {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   padding: 1rem 2rem;
-  background: white;
-  color: #228B22;
-  text-decoration: none;
-  border-radius: 10px;
-  font-weight: 600;
+  border-radius: 12px;
+  font-weight: 700;
   font-size: 1rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
   transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
-.primaryBtn:hover {
+.ctaButton.primary {
+  background: #8B5CF6;
+  color: white;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.ctaButton.primary:hover {
+  background: #7C3AED;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
 }
 
-.primaryBtn svg {
+.ctaButton.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.ctaButton.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.ctaButton svg {
   transition: transform 0.3s ease;
 }
 
-.primaryBtn:hover svg {
+.ctaButton:hover svg {
   transform: translateX(2px);
-}
-
-.secondaryBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  background: transparent;
-  color: white;
-  text-decoration: none;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.secondaryBtn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-1px);
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-  .title {
-    font-size: 3rem;
-  }
-  
-  .testimonialGrid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  }
-}
-
-@media (max-width: 968px) {
-  .challengeTracking {
-    padding: 4rem 0;
-  }
-  
-  .title {
-    font-size: 2.5rem;
-  }
-  
-  .subtitle {
-    font-size: 1.1rem;
-  }
-  
-  .testimonialGrid {
-    grid-template-columns: 1fr;
+  .metricsGrid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
   
-  .ctaTitle {
-    font-size: 2rem;
-  }
-  
-  .ctaActions {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .primaryBtn,
-  .secondaryBtn {
-    width: 100%;
-    max-width: 300px;
-    justify-content: center;
-  }
-  
-  .gradientOrb1 {
-    width: 200px;
-    height: 200px;
-    top: 10%;
-    left: 5%;
-  }
-  
-  .gradientOrb2 {
-    width: 180px;
-    height: 180px;
-    bottom: 15%;
-    right: 5%;
+  .achievementsGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -361,90 +630,82 @@
     padding: 3rem 0;
   }
   
-  .header {
-    margin-bottom: 3rem;
+  .container {
+    padding: 0 1rem;
   }
   
   .title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   
-  .subtitle {
+  .ctaTitle {
+    font-size: 1.75rem;
+  }
+  
+  .metricsGrid,
+  .achievementsGrid,
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .featuredCard {
+    padding: 2rem 1.5rem;
+  }
+  
+  .featuredHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .featuredAvatar {
+    align-self: center;
+  }
+  
+  .testimonialText {
+    padding-left: 0;
     font-size: 1rem;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ctaButton {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .ctaTitle {
+    font-size: 1.5rem;
+  }
+  
+  .metricCard {
+    padding: 1.5rem 1rem;
   }
   
   .testimonialCard {
     padding: 1.5rem;
   }
   
-  .testimonialText {
-    font-size: 1rem;
-  }
-  
   .ctaSection {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
   }
   
-  .ctaTitle {
-    font-size: 1.8rem;
+  .featuredCard {
+    padding: 1.5rem;
   }
   
-  .ctaSubtitle {
-    font-size: 1rem;
-  }
-  
-  .badge {
-    padding: 0.875rem 1.75rem;
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 1.9rem;
-  }
-  
-  .testimonialGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .testimonialCard {
-    padding: 1.25rem;
-  }
-  
-  .testimonialText {
-    font-size: 0.95rem;
-  }
-  
-  .userAvatar {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .userName {
-    font-size: 0.9rem;
-  }
-  
-  .userRole {
-    font-size: 0.8rem;
-  }
-  
-  .userCompany {
-    font-size: 0.75rem;
-  }
-  
-  .ctaTitle {
-    font-size: 1.6rem;
-  }
-  
-  .ctaSubtitle {
-    font-size: 0.9rem;
-  }
-  
-  .primaryBtn,
-  .secondaryBtn {
-    padding: 0.875rem 1.5rem;
-    font-size: 0.9rem;
+  .achievementCard {
+    padding: 1.5rem;
   }
 } 

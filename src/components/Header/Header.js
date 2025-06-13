@@ -28,95 +28,95 @@ const Header = () => {
 
   const navItems = [
     {
-      name: 'Find Talent',
-      href: '/browse-talent',
+      name: 'For Talent',
+      href: '/talent',
       hasDropdown: true,
       dropdownItems: [
         { 
-          name: 'Browse Professionals', 
-          href: '/browse-talent', 
-          icon: '👥',
-          description: 'Explore our curated pool of verified African talent'
+          name: 'Create Profile', 
+          href: '/signup?role=talent', 
+          icon: '👤',
+          description: 'Build your professional profile and showcase your skills'
         },
         { 
-          name: 'Top Rated Talent', 
-          href: '/top-talent', 
-          icon: '⭐',
-          description: 'Discover the highest-rated professionals on our platform'
+          name: 'Browse Opportunities', 
+          href: '/jobs', 
+          icon: '💼',
+          description: 'Discover vetted job opportunities from global companies'
         },
         { 
-          name: 'Skill Categories', 
-          href: '/categories', 
+          name: 'Skill Assessment', 
+          href: '/assessment', 
           icon: '🎯',
-          description: 'Find talent by specific skills and expertise areas'
+          description: 'Get rated by industry experts and boost your ELO score'
         },
         { 
           name: 'Success Stories', 
           href: '/success-stories', 
           icon: '🏆',
-          description: 'Read about successful projects and collaborations'
+          description: 'Read inspiring stories from African professionals'
         }
       ]
     },
     {
-      name: 'For Companies',
-      href: '/companies',
+      name: 'For Employers',
+      href: '/employers',
       hasDropdown: true,
       dropdownItems: [
         { 
-          name: 'Post a Job', 
+          name: 'Find Talent', 
+          href: '/browse-talent', 
+          icon: '🔍',
+          description: 'Search vetted African professionals by skills and ratings'
+        },
+        { 
+          name: 'Post Opportunities', 
           href: '/post-job', 
           icon: '📝',
-          description: 'Create job postings and find the perfect candidates'
+          description: 'Create job postings and connect with top talent'
         },
         { 
           name: 'Enterprise Solutions', 
           href: '/enterprise', 
           icon: '🏢',
-          description: 'Custom solutions for large organizations and teams'
+          description: 'Custom hiring solutions for large organizations'
         },
         { 
-          name: 'Pricing Plans', 
-          href: '/pricing', 
-          icon: '💰',
-          description: 'Transparent pricing for all your hiring needs'
-        },
-        { 
-          name: 'Hiring Guide', 
-          href: '/hiring-guide', 
-          icon: '📚',
-          description: 'Best practices for hiring remote African talent'
+          name: 'Hiring Analytics', 
+          href: '/analytics', 
+          icon: '📊',
+          description: 'Track your hiring success and talent pipeline'
         }
       ]
     },
     {
-      name: 'Resources',
-      href: '/resources',
+      name: 'Platform',
+      href: '/platform',
       hasDropdown: true,
       dropdownItems: [
         { 
-          name: 'Blog & Insights', 
-          href: '/blog', 
-          icon: '📖',
-          description: 'Latest trends and insights in remote work and talent'
-        },
-        { 
-          name: 'Help Center', 
-          href: '/help', 
-          icon: '❓',
-          description: 'Get answers to frequently asked questions'
-        },
-        { 
-          name: 'API Documentation', 
-          href: '/api-docs', 
+          name: 'How It Works', 
+          href: '/how-it-works', 
           icon: '⚡',
-          description: 'Integrate Tumoro into your existing workflows'
+          description: 'Learn about our vetting process and ELO rating system'
         },
         { 
-          name: 'Community', 
-          href: '/community', 
+          name: 'Reviewer Network', 
+          href: '/reviewers', 
+          icon: '🎓',
+          description: 'Meet our expert reviewers and become one yourself'
+        },
+        { 
+          name: 'Community Feed', 
+          href: '/feed', 
           icon: '🌍',
-          description: 'Connect with other professionals and companies'
+          description: 'Connect with professionals and share your journey'
+        },
+        { 
+          name: 'API & Integrations', 
+          href: '/api', 
+          icon: '🔗',
+          description: 'Integrate Tumoro into your existing workflows'
         }
       ]
     },

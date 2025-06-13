@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './Features.module.css';
 
 const Features = () => {
+  const [activeFeature, setActiveFeature] = useState(0);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -28,80 +30,109 @@ const Features = () => {
 
   const features = [
     {
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-          <path d="M19 15L19.74 17.74L22.5 18.5L19.74 19.26L19 22L18.26 19.26L15.5 18.5L18.26 17.74L19 15Z" fill="currentColor"/>
-          <path d="M5 15L5.74 17.74L8.5 18.5L5.74 19.26L5 22L4.26 19.26L1.5 18.5L4.26 17.74L5 15Z" fill="currentColor"/>
-        </svg>
-      ),
-      title: "AI-Powered Matching",
-      description: "Our intelligent algorithm connects you with the perfect opportunities based on your skills, experience, and career goals."
+      icon: "🎯",
+      title: "ELO Rating System",
+      description: "Dynamic scoring that combines skill assessments, reviewer ratings, and Tree Score to showcase your true professional value in the global marketplace.",
+      highlight: "96% accuracy rate",
+      color: "#2568FB",
+      bgColor: "#F0F4FF"
     },
     {
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor"/>
-        </svg>
-      ),
-      title: "Lightning Fast Applications",
-      description: "Apply to multiple positions with one click. Our streamlined process gets you noticed by employers in 24-48 hours."
+      icon: "✅",
+      title: "Expert Vetting Process",
+      description: "Every professional undergoes rigorous evaluation by industry experts. Comprehensive screening ensures quality and reliability for employers.",
+      highlight: "Zero bad hires",
+      color: "#10B981",
+      bgColor: "#F0FDF4"
     },
     {
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ),
-      title: "Verified Opportunities",
-      description: "Every job posting is verified and vetted. Work with legitimate companies offering real career advancement opportunities."
+      icon: "🌳",
+      title: "Tree Score Heritage",
+      description: "Optional FamilySearch integration that adds community credibility to your profile, celebrating African heritage and family connections.",
+      highlight: "Cultural authenticity",
+      color: "#F59E0B",
+      bgColor: "#FFFBEB"
     },
     {
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C13.1046 2 14 2.89543 14 4C14 5.10457 13.1046 6 12 6C10.8954 6 10 5.10457 10 4C10 2.89543 10.8954 2 12 2Z" fill="currentColor"/>
-          <path d="M21 9H3L5 7H19L21 9Z" fill="currentColor"/>
-          <path d="M19.5 10.5L18.5 21.5H5.5L4.5 10.5H19.5Z" fill="currentColor"/>
-          <circle cx="9" cy="9" r="1" fill="#FAF7F2"/>
-          <circle cx="15" cy="9" r="1" fill="#FAF7F2"/>
-          <circle cx="12" cy="12" r="1" fill="#FAF7F2"/>
-        </svg>
-      ),
-      title: "Global Network",
-      description: "Connect with companies worldwide seeking African talent. Access opportunities from startups to Fortune 500 companies."
+      icon: "🎬",
+      title: "Multimedia Showcasing",
+      description: "Upload your '30-second intro' videos, portfolio pieces, and rich media content to stand out from traditional text-based profiles.",
+      highlight: "3x more engagement",
+      color: "#8B5CF6",
+      bgColor: "#FAF5FF"
     },
     {
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 3V21H21V3H3ZM19 19H5V5H19V19Z" fill="currentColor"/>
-          <path d="M7 7H17V9H7V7Z" fill="currentColor"/>
-          <path d="M7 11H17V13H7V11Z" fill="currentColor"/>
-          <path d="M7 15H13V17H7V15Z" fill="currentColor"/>
-          <circle cx="16" cy="16" r="1" fill="currentColor"/>
-        </svg>
-      ),
-      title: "Career Analytics",
-      description: "Track your application progress, get insights on market trends, and receive personalized career advancement recommendations."
+      icon: "🤖",
+      title: "AI-Powered Growth",
+      description: "Receive personalized recommendations for skills development, mentorship opportunities, and strategic career advancement paths.",
+      highlight: "Smart matching",
+      color: "#EF4444",
+      bgColor: "#FEF2F2"
     },
     {
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C13.1046 2 14 2.89543 14 4V6C14 7.10457 13.1046 8 12 8C10.8954 8 10 7.10457 10 4V6C10 7.10457 10.8954 8 12 8Z" fill="currentColor"/>
-          <path d="M12 8C8.68629 8 6 10.6863 6 14V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V14C18 10.6863 15.3137 8 12 8Z" fill="currentColor"/>
-          <circle cx="10" cy="14" r="1" fill="#FAF7F2"/>
-          <circle cx="14" cy="14" r="1" fill="#FAF7F2"/>
-          <path d="M10 16H14V17H10V16Z" fill="#FAF7F2"/>
-        </svg>
-      ),
-      title: "Dedicated Support",
-      description: "Get personalized career coaching, interview preparation, and ongoing support to help you land your dream job."
+      icon: "🤝",
+      title: "Community & Mentorship",
+      description: "Connect with fellow African professionals, share your journey through posts, and access mentorship from industry leaders worldwide.",
+      highlight: "Global network",
+      color: "#06B6D4",
+      bgColor: "#F0F9FF"
+    }
+  ];
+
+  const stats = [
+    { number: "12,000+", label: "Active Professionals", icon: "👥", color: "#2568FB" },
+    { number: "500+", label: "Partner Companies", icon: "🏢", color: "#10B981" },
+    { number: "2,800+", label: "Successful Placements", icon: "🎉", color: "#F59E0B" },
+    { number: "96%", label: "Success Rate", icon: "📈", color: "#8B5CF6" }
+  ];
+
+  const companies = [
+    { 
+      name: "Microsoft", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+      employees: "15+ hires"
+    },
+    { 
+      name: "Google", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+      employees: "22+ hires"
+    },
+    { 
+      name: "Amazon", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+      employees: "18+ hires"
+    },
+    { 
+      name: "Meta", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg",
+      employees: "12+ hires"
+    },
+    { 
+      name: "Apple", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+      employees: "8+ hires"
+    },
+    { 
+      name: "Shopify", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg",
+      employees: "25+ hires"
+    },
+    { 
+      name: "Stripe", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg",
+      employees: "14+ hires"
+    },
+    { 
+      name: "Netflix", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+      employees: "9+ hires"
     }
   ];
 
   return (
     <section className={styles.features}>
-      <div className="container">
-        {/* Stats Section - Moved from Hero */}
+      <div className={styles.container}>
+        {/* Hero Stats Section */}
         <motion.div 
           className={styles.statsSection}
           variants={containerVariants}
@@ -109,34 +140,40 @@ const Features = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.div variants={itemVariants} className={styles.statsContent}>
-            <h3 className={styles.statsTitle}>Trusted by Professionals Worldwide</h3>
+          <motion.div variants={itemVariants} className={styles.statsHeader}>
+            <span className={styles.statsBadge}>
+              <span className={styles.badgeIcon}>⚡</span>
+              Trusted Worldwide
+            </span>
+            <h2 className={styles.statsTitle}>
+              Join <span className={styles.highlightNumber}>12,000+</span> African Professionals
+            </h2>
             <p className={styles.statsSubtitle}>
-              Join thousands of African professionals who have found their dream careers through Tumoro
+              Who have transformed their careers through our platform
             </p>
-            
-            <div className={styles.statsGrid}>
-              <div className={styles.statItem}>
-                <div className={styles.statNumber}>12,000+</div>
-                <div className={styles.statLabel}>Active Professionals</div>
-              </div>
-              <div className={styles.statItem}>
-                <div className={styles.statNumber}>500+</div>
-                <div className={styles.statLabel}>Partner Companies</div>
-              </div>
-              <div className={styles.statItem}>
-                <div className={styles.statNumber}>2,800+</div>
-                <div className={styles.statLabel}>Successful Placements</div>
-              </div>
-              <div className={styles.statItem}>
-                <div className={styles.statNumber}>96%</div>
-                <div className={styles.statLabel}>Success Rate</div>
-              </div>
-            </div>
+          </motion.div>
+          
+          <motion.div className={styles.statsGrid} variants={containerVariants}>
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                className={styles.statCard}
+                variants={itemVariants}
+                whileHover={{ 
+                  scale: 1.05,
+                  transition: { duration: 0.2 }
+                }}
+              >
+                <div className={styles.statIcon}>{stat.icon}</div>
+                <div className={styles.statNumber} style={{ color: stat.color }}>{stat.number}</div>
+                <div className={styles.statLabel}>{stat.label}</div>
+                <div className={styles.statAccent} style={{ backgroundColor: stat.color }}></div>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
 
-        {/* Features Section */}
+        {/* Main Features Section */}
         <motion.div 
           className={styles.featuresHeader}
           variants={containerVariants}
@@ -144,22 +181,23 @@ const Features = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.div variants={itemVariants} className={styles.sectionBadge}>
-            <span className={styles.badgeIcon}>⚡</span>
-            Why Choose Tumoro
-          </motion.div>
+          <motion.span variants={itemVariants} className={styles.sectionBadge}>
+            <span className={styles.badgeIcon}>🚀</span>
+            Platform Features
+          </motion.span>
           
           <motion.h2 variants={itemVariants} className={styles.featuresTitle}>
             Everything You Need to
-            <span className={styles.highlightText}> Advance Your Career</span>
+            <span className={styles.highlightText}> Unlock Your Potential</span>
           </motion.h2>
           
           <motion.p variants={itemVariants} className={styles.featuresSubtitle}>
-            From AI-powered job matching to dedicated career support, we provide all the tools 
-            and services you need to find your next opportunity and grow professionally.
+            From AI-powered matching to cultural heritage celebration, we provide comprehensive tools 
+            for career advancement and professional growth.
           </motion.p>
         </motion.div>
 
+        {/* Interactive Features Grid */}
         <motion.div 
           className={styles.featuresGrid}
           variants={containerVariants}
@@ -170,25 +208,48 @@ const Features = () => {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className={styles.featureCard}
+              className={`${styles.featureCard} ${activeFeature === index ? styles.active : ''}`}
               variants={itemVariants}
               whileHover={{ 
-                y: -8,
+                y: -12,
                 transition: { duration: 0.3 }
               }}
+              onHoverStart={() => setActiveFeature(index)}
             >
-              <div className={styles.featureIcon}>
-                {feature.icon}
+              <div className={styles.featureHeader}>
+                <div className={styles.featureIcon} style={{ backgroundColor: feature.bgColor, color: feature.color }}>
+                  <span>{feature.icon}</span>
+                </div>
+                <div className={styles.featureHighlight} style={{ backgroundColor: feature.color }}>
+                  {feature.highlight}
+                </div>
               </div>
+              
               <div className={styles.featureContent}>
                 <h3 className={styles.featureTitle}>{feature.title}</h3>
                 <p className={styles.featureDescription}>{feature.description}</p>
               </div>
+
+              <div className={styles.featureFooter}>
+                <motion.button 
+                  className={styles.learnMore}
+                  style={{ color: feature.color }}
+                  whileHover={{ x: 4 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Learn More
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </motion.button>
+              </div>
+
+              <div className={styles.cardAccent} style={{ backgroundColor: feature.color }}></div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Company Logos Section */}
+        {/* Companies Section */}
         <motion.div 
           className={styles.companiesSection}
           variants={containerVariants}
@@ -196,32 +257,37 @@ const Features = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.div variants={itemVariants} className={styles.companiesContent}>
-            <h3 className={styles.companiesTitle}>Trusted by Leading Companies</h3>
+          <motion.div variants={itemVariants} className={styles.companiesHeader}>
+            <span className={styles.companiesBadge}>
+              <span className={styles.badgeIcon}>🏆</span>
+              Trusted Partners
+            </span>
+            <h3 className={styles.companiesTitle}>Trusted by Industry Leaders</h3>
             <p className={styles.companiesSubtitle}>
-              Our professionals work with industry leaders across the globe
+              Join professionals working at the world's most innovative companies
             </p>
-            
-            <div className={styles.companiesGrid}>
-              <div className={styles.companyLogo}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" />
-              </div>
-              <div className={styles.companyLogo}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" alt="Microsoft" />
-              </div>
-              <div className={styles.companyLogo}>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" />
-              </div>
-              <div className={styles.companyLogo}>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Shopify_logo.svg" alt="Shopify" />
-              </div>
-              <div className={styles.companyLogo}>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Stripe" />
-              </div>
-              <div className={styles.companyLogo}>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" alt="Airbnb" />
-              </div>
-            </div>
+          </motion.div>
+          
+          <motion.div className={styles.companiesGrid} variants={containerVariants}>
+            {companies.map((company, index) => (
+              <motion.div
+                key={index}
+                className={styles.companyCard}
+                variants={itemVariants}
+                whileHover={{ 
+                  scale: 1.05,
+                  transition: { duration: 0.2 }
+                }}
+              >
+                <div className={styles.companyLogo}>
+                  <img src={company.logo} alt={company.name} />
+                </div>
+                <div className={styles.companyInfo}>
+                  <div className={styles.companyName}>{company.name}</div>
+                  <div className={styles.companyEmployees}>{company.employees}</div>
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
 
@@ -233,48 +299,32 @@ const Features = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <div className={styles.ctaBackground}>
-            <motion.div 
-              className={styles.ctaOrb1}
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.5, 0.3]
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div 
-              className={styles.ctaOrb2}
-              animate={{
-                scale: [1.1, 1, 1.1],
-                opacity: [0.2, 0.4, 0.2]
-              }}
-              transition={{
-                duration: 10,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          </div>
-
           <motion.div variants={itemVariants} className={styles.ctaContent}>
-            <h3 className={styles.ctaTitle}>Ready to Take Your Career to the Next Level?</h3>
-            <p className={styles.ctaSubtitle}>
-              Join thousands of African professionals who have found their dream careers through Tumoro
+            <div className={styles.ctaIcon}>🎯</div>
+            <h3 className={styles.ctaTitle}>Ready to Elevate Your Career?</h3>
+            <p className={styles.ctaDescription}>
+              Join thousands of African professionals who have unlocked global opportunities
             </p>
-            <div className={styles.ctaActions}>
-              <a href="/signup" className={styles.primaryBtn}>
-                <span>Create Your Profile</span>
+            <div className={styles.ctaButtons}>
+              <motion.a 
+                href="/signup" 
+                className={`${styles.ctaButton} ${styles.primary}`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Get Started Free
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </a>
-              <a href="/browse-jobs" className={styles.secondaryBtn}>
-                <span>Browse Opportunities</span>
-              </a>
+              </motion.a>
+              <motion.a 
+                href="/demo" 
+                className={`${styles.ctaButton} ${styles.secondary}`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Watch Demo
+              </motion.a>
             </div>
           </motion.div>
         </motion.div>

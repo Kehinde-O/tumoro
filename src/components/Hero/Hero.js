@@ -136,15 +136,15 @@ const Hero = () => {
             </motion.div>
             
             <motion.h1 variants={itemVariants} className={styles.heroTitle}>
-              Your Next
-              <span className={styles.highlightText}> Dream Job</span>
+              Unlock Your
+              <span className={styles.highlightText}> African Excellence</span>
               <br />
-              Awaits You
+              on the Global Stage
             </motion.h1>
             
             <motion.p variants={itemVariants} className={styles.heroSubtitle}>
-              Connect with global companies seeking exceptional African talent. 
-              Showcase your skills, build your career, and work on projects that matter.
+              Every talent is vetted. Every hire is reliable. Join Africa's premier talent marketplace 
+              where exceptional professionals connect with world-class opportunities and build careers that matter.
             </motion.p>
 
             <motion.div variants={itemVariants} className={styles.heroActions}>

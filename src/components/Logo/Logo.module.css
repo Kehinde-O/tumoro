@@ -1,0 +1,69 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.logoSvg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 2px 8px rgba(198, 93, 0, 0.2));
+  transition: all 0.3s ease;
+}
+
+.logo:hover .logoSvg {
+  filter: drop-shadow(0 4px 12px rgba(198, 93, 0, 0.3));
+}
+
+/* Size variants */
+.small {
+  width: 32px;
+  height: 32px;
+}
+
+.medium {
+  width: 40px;
+  height: 40px;
+}
+
+.large {
+  width: 60px;
+  height: 60px;
+}
+
+/* Animation elements */
+.mainCircle {
+  transition: all 0.3s ease;
+}
+
+.letterT {
+  transition: all 0.3s ease;
+}
+
+.highlight {
+  transition: all 0.3s ease;
+  opacity: 0.6;
+}
+
+.logo:hover .highlight {
+  opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .large {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .medium {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .small {
+    width: 28px;
+    height: 28px;
+  }
+} 

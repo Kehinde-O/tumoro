@@ -1,0 +1,189 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+Tumoro.org: Full Feature Specification Document (Desktop and Mobile View)
+
+ "Every talent is vetted. Every hire is reliable."
+
+1. Signup
+
+General Functionality
+- The signup page is unified but role-dependent, accessible through three selectable tabs: Talent, Reviewer, and Employer.
+- Tab selection dynamically changes the form displayed.
+- Each form includes standard fields with specific role-based additions.
+- Google OAuth integration is available for all roles.
+
+Talent Signup
+Required Fields:
+- Full Name
+- Email Address
+- Password (with validation)
+- Location (city, country)
+
+Optional Fields:
+- FamilySearch Tree Connection: If linked, the system calculates a "Tree Score" reflecting family/community credibility. This can be skipped and added later from the dashboard.
+
+UI Considerations:
+- A tooltip or info icon explaining "Tree Score" and how it contributes to Tumoro Rating.
+- Clear visual separation for optional vs. required sections.
+
+Reviewer Signup
+Required Fields:
+- Full Name
+- Email Address
+- Password
+- Location
+- Industry or Field of Expertise
+- Years of Experience (numeric dropdown or input)
+- Highest Level of Education (dropdown)
+- Certifications (multi-input field)
+
+Approval Process:
+- After signup, Reviewer accounts enter a “Pending Approval” state.
+- System admins manually verify credentials before granting reviewing rights.
+
+UI Considerations:
+- A banner or modal explaining the post-signup review process.
+
+Employer Signup
+Required Fields:
+- Organization Name (or Personal Name for solo recruiters)
+- Email Address
+- Password
+
+UI Considerations:
+- Encourage use of business email addresses for added legitimacy.
+
+2. Login
+- Standard email/password login
+- "Continue with Google" login using OAuth
+- Forgot Password flow
+- Role-aware redirection: Users are taken to the appropriate dashboard based on role
+
+3. Dashboards & Profiles
+Talent Dashboard
+- Header: Full name, profile image, "Me in 30 Seconds" video (auto-play muted)
+- ELO Rating: A calculated number summarizing overall performance, derived from skill ratings, interview scores, and Tree Score.
+- Skills & Ratings: List of declared skills and associated reviewer ratings (1–5 stars or a more nuanced scale)
+- Tree Score: Visible badge or score with tooltip
+- Work Experience: Chronological list with job title, company, duration, and description
+- Certifications: Verifiable documents or text entries
+- Written Reviews: Reviewer-generated comments; talent can select which ones are displayed publicly
+- Notifications: For interview invites, reviews received, system messages
+- Interview Section: Status tracker (pending, under review, completed), most recent interview score
+
+Talent Public Profile
+- Similar to the dashboard, but limited to publicly visible information
+- Includes: video, ELO rating, selected written reviews, Tree Score, work history, and top-rated skills
+
+Reviewer Dashboard
+- Reviewer Rating: A quality score based on feedback from talents and internal review
+- Pending Reviews: List of upcoming or assigned talent profiles/interviews to evaluate
+- Review History: Log of all completed reviews, their ratings, and status
+- Industry Coverage: Ability to update fields of interest
+
+Employer Dashboard
+- Talent Tracker: List of followed or shortlisted talents with their growth timeline
+- Hiring Stats: Number of talents recruited through Tumoro
+- Search Tools: Shortcuts to advanced search by skill, rating, Tree Score, etc.
+- Interview Requests: Monitor status of interview invites and responses
+
+4. Feed / Posts Page
+Overview
+This feature fosters transparency, community learning, and inspiration.
+
+Content Types:
+- Articles: Industry insights, guides, or announcements written by any user role
+- "Me in 30 Seconds" Videos: Shared publicly if the user opts in
+- Progress Updates: Talents can share milestones, certification completions, or job anniversaries
+- Review Highlights: Standout reviews (with permission) can be featured
+
+User Interactions:
+- Like, Comment, Share (internal sharing only)
+- Save/bookmark posts
+
+Moderation:
+- Report functionality for inappropriate content
+- Admin dashboard for feed content moderation
+
+5. Talent Search
+
+Advanced Filters:
+- Industry or Field
+- Tumoro ELO Rating Range
+- Tree Score Presence
+- Skill Match
+- Certification Type
+- Availability (active/inactive or job-seeking status)
+
+Result Cards:
+- Profile picture, Name, Location, Short Bio, Key Skills, Rating Snapshot, CTA: "View Profile"
+
+UX Note: Allow employers to "track" or "bookmark" talents directly from search results.
+
+6. Reviewer and Employer Search
+
+Reviewer Search
+- Filters: Industry, Reviewer Rating, Experience Level, Certifications
+- Display: Name, Bio, Industries Covered, Review Stats
+
+Employer Search (Optional)
+- Useful for talents looking to target companies
+- Filters: Company size, Industry, Location
+- Display: Company name, hiring history, current open roles (if any)
+
+Appendix: Rating Systems
+
+Tumoro ELO Rating
+- Composite score that includes:
+- Average skill ratings from reviewers
+- Interview scores
+- Tree Score (optional bonus)
+- Engagement/activity score (e.g., posts, feedback, profile completeness)
+- Update frequency: Real-time or daily batch job
+
+Reviewer Rating
+- Based on:
+- Accuracy (agreement with other reviewers or employer outcomes)
+- Feedback from talents reviewed
+- Admin moderation outcomes
+
+
+
+
+----------------------------------------------------------------------------------
+Primary Brand Colors (for aggressive marketing and high engagement):   
+#FECD45 – Bright Amber (for energy, creativity, and visibility)
+
+#2568FB – Bold Blue (for trust, intelligence, and professionalism)
+
+Additional Functional Requirements:
+Talent Showcasing for Artisans
+
+- Platform may allow artisans (craftsmen, creators, etc.) to upload and display their work via photos and videos.
+
+- Profiles may support rich media content to highlight each individual’s skillset dynamically.
+
+Robust Field-Specific Search Engine
+
+- Implement a search algorithm that allows users (employers, recruiters, collaborators) to filter by craft type, location, experience level, and style.
+
+- Search should be optimized for performance and relevance, using tags, categories, and skill keywords.
+
+Multimedia-Oriented User Experience
+
+- Design the interface around visual content. Prioritize image and video displays in search results and profiles.
+
+- Ensure fast loading and optimized rendering of media on both web and mobile.
+
+AI-Driven Recommendations
+
+Integrate an AI module that:
+
+- Analyzes an artisan’s profile, content, and performance metrics
+
+- Automatically recommends growth resources (tutorials, mentors, job opportunities, tools)
+
+- Aligns recommendations with industry trends and employer expectations for that specific field.

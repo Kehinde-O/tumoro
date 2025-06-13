@@ -194,6 +194,7 @@ const Hero = () => {
                 <div className={styles.imageOverlay}></div>
               </div>
               
+              
               {/* Floating Cards */}
               <motion.div 
                 className={styles.floatingCard1}
